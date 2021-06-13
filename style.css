@@ -1,0 +1,670 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Montserrat' ,sans-serif;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+.contain{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.title{
+    font-size: 5rem;
+    font-weight: 1000;
+    color: yellow;
+    margin-bottom: 15px;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+h2{
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    line-height: 2rem;
+}
+.u1 {
+    display: inline-block;
+    padding: 10px 30px;
+    color: yellow;
+    background-color: transparent;
+    border: 2px solid yellow;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+.u1:hover{
+    color: crimson;
+    background-color: yellow;
+}
+.u2{
+    display: inline-block;
+    padding: 10px 30px;
+    color: yellow;
+    background-color: transparent;
+    border: 2px solid yellow;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+.u2:hover{
+    color: crimson;
+    background-color: yellow;
+}
+.line{
+    background: white;
+    display: block;
+    height: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px white;
+    margin-top: 2px;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.name h1{
+    font-size: 3rem;
+    color: white;
+}
+.name h1 span{
+    color: yellow;
+    font-size: 4rem;
+}
+#header{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+
+}
+#header .header{
+    min-height: 8vh;
+    background-color: rgba(31,30,30,0.50);
+    transition: .4s background-color;
+}
+#header .nav_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+#header .nav_list ul{
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31,30,30);
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .6s ease left;
+}
+#header .nav_list ul.active{
+    left: 0;
+}
+#header .nav_list ul a{
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: .3rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+#header .nav_list ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgb(240, 248, 255, 0.021);
+    font-size: 12rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .5s ease letter-spacing;
+}
+#header .nav_list ul li:hover a::after{
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+#header .nav_list ul li:hover a{
+    color: yellow;
+}
+#header .u3{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+    margin-right: 20px;
+}
+#header .u3::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: u3_puls 1s ease infinite;
+}
+#header .u3 .bar1{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+#header .u3 .bar1::after,
+#header .u3 .bar1::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .5s ease;
+    transition-property: top, bottom;
+}
+#header .u3 .bar1::after{
+    top: 8px;
+}
+#header .u3 .bar1::before{
+    bottom: 8px;
+}
+#header .u3.active .bar1::before{
+    bottom: 0;
+}
+#header .u3.active .bar1::after{
+    top: 0;
+}
+#umang, #umang1, #umang2, #umang3, #umang4{
+    background-image: url(./photo/WALL.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+#umang::after, #umang1::after, #umang2::after, #umang3::after, #umang4::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: -1;
+}
+#umang .umang{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: 50px;
+}
+#umang h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+#umang h1:nth-child(1){
+    animation-delay: 1s;
+}
+#umang h1:nth-child(2){
+    animation-delay: 2s;
+}
+#umang h1:nth-child(3){
+     animation: text_name .5 ease forwards;
+     animation-delay: 3s;
+}
+#umang h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: yellow;
+    animation: text_reveal_box 1s ;
+    animation-delay: .3s;
+}
+#umang h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#umang h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#umang h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#umang1 .umang1{
+    flex-direction: column-reverse;
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 20px;
+}
+#umang1 .u1{
+    color: yellowgreen;
+    margin-bottom: 50px;
+}
+#umang1 .right h1{
+    color: yellow;
+}
+#umang1 .left {
+    width: 300px;
+    height: 300px;
+} 
+#umang1 .right{
+    width: 100%;
+}
+#umang1 .left .img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    
+}
+#umang1 .left .img::after{
+    content: '';
+	position: absolute;
+	left: -33px;
+	top: 19px;
+	height: 98%;
+	width: 98%;
+	border: 7px solid yellow;
+	z-index: -1;
+}
+#umang2 .umang2{
+    flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#umang2 .contain{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.skill{
+    width: 500px;
+    margin: 50px auto;
+    color: white;
+    list-style: none;
+}
+#umang2 .skill h3{
+    margin-bottom: 5px;
+    text-align: left;
+}
+.skill li{
+    margin: 30px 0;
+    font-size: 1.5rem;
+}
+.bar{
+    display: block;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px yellow;
+}
+.bar span{
+    height: 4px;
+    float: left;
+    background: yellow;
+}
+.C{
+    width: 80%;
+}
+.C_{
+    width: 60%;
+}
+.html{
+    width: 85%;
+}
+.css{
+    width: 75%;
+}
+.php{
+    width: 50%;
+}
+#umang3 .umang3{
+    flex-direction: column;
+    max-width: 1200px;
+}
+#umang3 .contain{
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#umang3 .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+#umang3 .project{
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    background-size: cover;
+    margin: 25px 7%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: .4s box-shadow;
+}
+#umang3 .project:hover{
+    box-shadow: 0 0 25px 0 yellow;
+}
+#umang3 .project::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: -1;
+}
+#umnag3 .bottom .icon{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+#umang3 .project p{
+    color: white;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+}
+#umang4 .umang4{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
+#umang4 .items{
+    width: 100%;
+}
+#umang4 .item{
+    width: 80%;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 0 yellow;
+    flex-direction: column;
+    transition: .5s box-shadow;
+}
+#umang4 .item:hover{
+    box-shadow: 0 0 10px 0 yellow;
+}
+#umang4 .icon{
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+#umang4 .info h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: yellowgreen;
+}
+#umang5{
+    background-color: #29323c;
+}
+#umang5 .umang5{
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+#umang5 .icon{
+    display: flex;
+    margin-bottom: 40px;
+}
+#umang5 .item{
+    height: 70px;
+    width: 70px;
+    margin: 0 10px;
+}
+#umang5 .item img{
+    filter: grayscale(1);
+    transition: .4s ease filter;
+}
+#umang5 .item img:hover{
+    filter: grayscale(0);
+}
+#umang5 p{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        right: 0;
+    }
+    100%{
+        width: 0;
+        right: 100%;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes text_name{
+    100%{
+        color: yellow;
+        font-weight: 500px;
+    }
+}
+@keyframes u3_puls{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .u1{
+        font-size: 2.5rem;
+        padding: 20px 60px;
+    }
+    #umang1 .u1{
+        font-size: 2.5rem;
+        padding: 15px 40px;
+    }
+    h1.title{
+        font-size: 6rem;
+    }
+    #umang h1{
+        font-size: 7rem;
+    }
+    #umang2 .skill{
+        width: 800px;
+    }
+    #umang1 .umang1 {
+		flex-direction: row;
+	}
+	#umang1 .left {
+		width: 600px;
+		height: 400px;
+		padding-left: 60px;
+	}
+	#umang1 .umang1 .left .img::after {
+		left: -45px;
+		top: 34px;
+		height: 98%;
+		width: 98%;
+		border: 10px solid yellow;
+	}
+	#umang1 .right {
+		text-align: left;
+		padding: 30px;
+	}
+	#umang1 .right h1 {
+		text-align: left;
+	}
+    #umang2 .skill .each_skill{
+        padding: 3px;
+    }
+    #umang2 .skill h3{
+        margin-bottom: 5px;
+        text-align: left;
+        font-size: 2rem;
+    }
+    #umang3 .bottom .project{
+        flex-basis: 45%;
+        margin: 2.5%;
+    }
+    .bar{
+        height: 13px;
+    }
+    .bar span{
+        height: 11px;
+    }
+} 
+
+@media only screen and (min-width: 1200px){
+    #header .u3{
+        display: none;
+    }
+    #header .nav_list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+    #header .nav_list ul li{
+        display: inline-block;
+    }
+    #header .nav_list ul li a{
+        font-size: 1.8rem;
+    }
+    #header .nav_list ul a::after{
+        display: none;
+    }
+    #umang2 .skill{
+        width: 1000px;
+    }
+    .bar{
+        height: 17px;
+    }
+    .bar span{
+        height: 14px;
+    }
+    #umang3 .bottom .item{
+        flex-basis: 22%;
+        margin: 1.5%;
+    }
+    #umang4 .umang4 {
+		flex-direction: column;
+		padding: 100px 0;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+	}
+	#umang4 .items {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin: 0;
+	}
+	#umang4 .item {
+		width: 35%;
+		margin: 0 20px;
+		flex-direction: column;
+	}
+	#umang4 .item .icon {
+		height: 100px;
+		width: 100px;
+	}
+	#umang4 .item .icon img {
+		object-fit: contain;
+	}
+	#umang4 .item .info {
+		width: 100%;
+		text-align: left;
+		padding-left: 20px;
+	}
+    #umang5 .item{
+        height: 80px;
+        width: 80px;
+    }
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background: linear-gradient(transparent,black);
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(yellowgreen,yellow);
+}
+
+
